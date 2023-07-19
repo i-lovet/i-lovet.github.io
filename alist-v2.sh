@@ -83,7 +83,7 @@ CHECK() {
 INSTALL() {
     # 下载 Alist 程序
     echo -e "\r\n${GREEN_COLOR}下载 Alist v2.6.4 ...${RES}"
-    curl -L https://ghproxy.com/https://github.com/Xhofe/alist/releases/download/v2.6.4/alist-linux-musl-$ARCH.tar.gz -o /tmp/alist.tar.gz $CURL_BAR
+    curl -L https://ghproxy.com/https://github.com/ilovet/alist/releases/download/v2.6.4/alist-linux-musl-$ARCH.tar.gz -o /tmp/alist.tar.gz $CURL_BAR
     tar zxf /tmp/alist.tar.gz -C $INSTALL_PATH/
     
     if [ -f $INSTALL_PATH/alist-linux-musl-$ARCH ];then
@@ -173,7 +173,7 @@ UPDATE() {
         # 备份 alist 二进制文件，供下载更新失败回退
         cp $INSTALL_PATH/alist /tmp/alist.bak
         echo -e "${GREEN_COLOR}下载 Alist v2.6.4 ...${RES}"
-        curl -L https://ghproxy.com/https://github.com/Xhofe/alist/releases/download/v2.6.4/alist-linux-musl-$ARCH.tar.gz -o /tmp/alist.tar.gz $CURL_BAR
+        curl -L https://ghproxy.com/https://github.com/ilovet/alist/releases/download/v2.6.4/alist-linux-musl-$ARCH.tar.gz -o /tmp/alist.tar.gz $CURL_BAR
         tar zxf /tmp/alist.tar.gz -C $INSTALL_PATH/
         if [ -f $INSTALL_PATH/alist-linux-musl-$ARCH ];then
             mv $INSTALL_PATH/alist-linux-musl-$ARCH $INSTALL_PATH/alist

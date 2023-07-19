@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="Xhofe">
+    <meta name="author" content="ilovet">
     <link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6488351372249466" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css" />
@@ -14,7 +14,7 @@
         
             ubuntu安装配置Jenkins与SonarQube |
         
-        Xhofe&#39;s Blog
+        ilovet&#39;s Blog
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -29,7 +29,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":null},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Xhofe' Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="ilovet' Blog" type="application/atom+xml">
 </head>
 
 
@@ -61,7 +61,7 @@
         <div class="left">
             
             <a class="logo-title" href="/">
-                Xhofe&#39;s Blog
+                ilovet&#39;s Blog
             </a>
         </div>
 
@@ -210,7 +210,7 @@
                 </div>
                 <div class="info">
                     <div class="author">
-                        <span class="name">Xhofe</span>
+                        <span class="name">ilovet</span>
                         
                             <span class="author-label">Lv3</span>
                         
@@ -295,10 +295,10 @@
 <p>Jenkins的主要作用是用来做<code>CI&amp;CD</code>，在软件工程中，CI / CD或CICD通常是指持续集成以及持续交付或持续部署的组合实践(from <a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CI/CD" >wiki<i class="fas fa-external-link-alt"></i></a>)。具体而言，CI/CD 可让持续自动化和持续监控贯穿于应用的整个生命周期（从集成和测试阶段，到交付和部署）。这些关联的事务通常被统称为“CI/CD 管道”，由开发和运维团队以敏捷方式协同支持。</p>
 <p>所以在此处，Jenkins的主要作用是，我们将代码提交到SVN，Jenkins自动从SVN获取最新的代码，然后进行一系列自动的打包、测试、部署的工作，不需要我们手动去完成。</p>
 <h3 id="jenkins安装部署"><a class="markdownIt-Anchor" href="#jenkins安装部署"></a> Jenkins安装部署</h3>
-<h4 id="首先是jdk的安装"><a class="markdownIt-Anchor" href="#首先是jdk的安装"></a> 首先是<a class="link"   target="_blank" rel="noopener" href="https://blog.xhofe.top/2020/04/19/linux-install-java/" >JDK的安装<i class="fas fa-external-link-alt"></i></a> ：</h4>
+<h4 id="首先是jdk的安装"><a class="markdownIt-Anchor" href="#首先是jdk的安装"></a> 首先是<a class="link"   target="_blank" rel="noopener" href="https://blog.ilovet.top/2020/04/19/linux-install-java/" >JDK的安装<i class="fas fa-external-link-alt"></i></a> ：</h4>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/java</span><br><span class="line">wget xxx.com/jdk-8u251-linux-x64.tar.gz</span><br><span class="line">tar -zxvf jdk-8u251-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
 <p>因为环境变量中已经配置了Jdk1.7，所以不再配置环境变量。</p>
-<h4 id="然后是安装maven"><a class="markdownIt-Anchor" href="#然后是安装maven"></a> 然后是<a class="link"   target="_blank" rel="noopener" href="https://blog.xhofe.top/2020/04/19/linux-install-java/#Maven%E5%AE%89%E8%A3%85" >安装Maven <i class="fas fa-external-link-alt"></i></a>;</h4>
+<h4 id="然后是安装maven"><a class="markdownIt-Anchor" href="#然后是安装maven"></a> 然后是<a class="link"   target="_blank" rel="noopener" href="https://blog.ilovet.top/2020/04/19/linux-install-java/#Maven%E5%AE%89%E8%A3%85" >安装Maven <i class="fas fa-external-link-alt"></i></a>;</h4>
 <h5 id="安装maven"><a class="markdownIt-Anchor" href="#安装maven"></a> 安装maven</h5>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /mnt/maven</span><br><span class="line"><span class="built_in">cd</span> /mnt/maven</span><br><span class="line">wget xxx.com/apache-maven-3.6.3-bin.tar.gz</span><br><span class="line">tar -zxvf apache-maven-3.6.3-bin.tar.gz</span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment"># 添加</span></span><br><span class="line"><span class="built_in">export</span> M2_HOME=/mnt/maven/apache-maven-3.6.3</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;M2_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment">#使环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
 <h5 id="更改默认的仓库位置与maven阿里云镜像"><a class="markdownIt-Anchor" href="#更改默认的仓库位置与maven阿里云镜像"></a> 更改默认的仓库位置与maven阿里云镜像：</h5>
@@ -402,7 +402,7 @@
 </li>
 <li>
 <p>配置<code>sonar.properties</code>中的数据库(这里很坑，地址填localhost无法连接，找了很久)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /mnt/jenkins/sonarqube/sonarqube-7.7/conf/sonar.properties</span><br><span class="line"><span class="comment"># 添加</span></span><br><span class="line">sonar.jdbc.url=jdbc:mysql://xhofe.top:3306/sonar?useUnicode=<span class="literal">true</span>&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=<span class="literal">true</span>&amp;useConfigs=maxPerformance&amp;useSSL=<span class="literal">false</span>&amp;serverTimezone=Asia/Shanghai</span><br><span class="line">sonar.jdbc.username=<span class="built_in">test</span></span><br><span class="line">sonar.jdbc.password=<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /mnt/jenkins/sonarqube/sonarqube-7.7/conf/sonar.properties</span><br><span class="line"><span class="comment"># 添加</span></span><br><span class="line">sonar.jdbc.url=jdbc:mysql://ilovet.top:3306/sonar?useUnicode=<span class="literal">true</span>&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=<span class="literal">true</span>&amp;useConfigs=maxPerformance&amp;useSSL=<span class="literal">false</span>&amp;serverTimezone=Asia/Shanghai</span><br><span class="line">sonar.jdbc.username=<span class="built_in">test</span></span><br><span class="line">sonar.jdbc.password=<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="启动sonarqube"><a class="markdownIt-Anchor" href="#启动sonarqube"></a> 启动Sonarqube</h5>
@@ -520,7 +520,7 @@
                 <div class="article-copyright-info-container">
     <ul>
         <li>本文标题：ubuntu安装配置Jenkins与SonarQube</li>
-        <li>本文作者：Xhofe</li>
+        <li>本文作者：ilovet</li>
         <li>创建时间：2020-09-13 17:20:18</li>
         <li>
             本文链接：https://nn.ci/posts/jenkins-sonarqube.html
@@ -660,7 +660,7 @@
               <span>2019</span>
               -
             
-            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Xhofe</a>
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ilovet</a>
         </div>
         
             <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
