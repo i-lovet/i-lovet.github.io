@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "attachmentFolderPath": "XX.Resource",
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "newFileLocation": "root",
+  "newFileFolderPath": "03.Resource",
+  "showUnsupportedFiles": true
+}

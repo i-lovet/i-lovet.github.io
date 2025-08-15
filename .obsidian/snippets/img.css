@@ -1,0 +1,7 @@
+img {
+  width: 100% !important;
+  max-width: 100% !important;
+  transform: none !important;
+  margin: 0 auto !important;
+  padding-left: 0; 
+}
